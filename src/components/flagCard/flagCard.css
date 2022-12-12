@@ -1,0 +1,19 @@
+.flag-card-container .ant-card-cover {
+    background: linear-gradient(to left, #e84855, #f9dc5c);
+    border: none;
+    border-image-slice: 1;
+    padding: 8px;
+}
+
+.flag-card-container .ant-card-body {
+    position: absolute;
+    bottom: 8px;
+    width: 100%;
+    font-weight: 700;
+    font-size: 1rem;
+}
+
+.flag-card-container .nation-name {
+    text-transform: uppercase;
+    margin-bottom: -26px;
+}

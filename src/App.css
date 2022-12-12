@@ -75,5 +75,11 @@
 
 .flag-card-wrap {
   width: 80%;
-  margin-top: 2rem;
+  margin-top: 5rem;
+}
+
+.App .nation-name {
+  background: -webkit-linear-gradient(#09e85e, #16c172);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }

@@ -1,15 +1,25 @@
 import "./flagCard.css";
-import React from "react";
+import React, { useState } from "react";
 import { Card } from "antd";
-import srcImg from "../../flag/portugak-flag-8x5.jpg";
+import ModalResult from "../modalResult/ModalResult";
 
-const FlagCard = () => {
+const FlagCard = (props) => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const { name, isSuccess, msg, isChecked, srcImg } = props;
+
+  React.useEffect(() => {
+    console.log("isModalOpen", isModalOpen);
+  }, [isModalOpen]);
   return (
     <Card
       hoverable
       className="flag-card-container"
       cover={<img alt="example" src={srcImg} />}
-    ></Card>
+      onClick={() => setIsModalOpen1(true)}
+    >
+      <h2 className="nation-name">{name}</h2>
+      <ModalResult isModalOpen={isModalOpen} setIsModalOpen={setIsModalOpen} />
+    </Card>
   );
 };
 
