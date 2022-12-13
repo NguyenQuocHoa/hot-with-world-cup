@@ -10,10 +10,35 @@
     bottom: 8px;
     width: 100%;
     font-weight: 700;
-    font-size: 1rem;
+    font-size: 0.9em;
 }
 
 .flag-card-container .nation-name {
     text-transform: uppercase;
     margin-bottom: -26px;
 }
+
+.flag-card-container .img-wrap-fail {
+    position: fixed;
+    width: 115vw;
+    z-index: 2;
+    top: 0;
+    left: -30px;
+}
+
+.flag-card-container .img-wrap-fail img {
+    width: 115vw;
+}
+
+.flag-card-container .img-wrap-success {
+    position: fixed;
+    width: 100vw;
+    z-index: 2;
+    top: -50%;
+    left: -30px;
+}
+
+.flag-card-container .img-wrap-success img {
+    width: 100vw;
+}
+

@@ -1,24 +1,40 @@
 import "./flagCard.css";
 import React, { useState } from "react";
 import { Card } from "antd";
-import ModalResult from "../modalResult/ModalResult";
+import congrat from "../../gif/congrats-6.gif";
+import fail from "../../gif/failer.gif";
 
 const FlagCard = (props) => {
-  const [isModalOpen, setIsModalOpen] = useState(false);
-  const { name, isSuccess, msg, isChecked, srcImg } = props;
+  const { selectedId, name, isSuccess, srcImg, setSelectedId, styles } = props;
+  const srcBg = isSuccess ? congrat : fail;
+  const [isShowImg, setIsShowImg] = useState(false);
 
-  React.useEffect(() => {
-    console.log("isModalOpen", isModalOpen);
-  }, [isModalOpen]);
+  const onImageClick = () => {
+    setIsShowImg(true);
+    setTimeout(() => {
+      setSelectedId(selectedId);
+      setIsShowImg(false);
+    }, 4000);
+  };
+
   return (
     <Card
       hoverable
       className="flag-card-container"
       cover={<img alt="example" src={srcImg} />}
-      onClick={() => setIsModalOpen1(true)}
+      onClick={onImageClick}
     >
-      <h2 className="nation-name">{name}</h2>
-      <ModalResult isModalOpen={isModalOpen} setIsModalOpen={setIsModalOpen} />
+      <h2
+        className="nation-name"
+        style={{ fontSize: styles.fontSize, marginBottom: styles.marginBottom }}
+      >
+        {name}
+      </h2>
+      {isShowImg && (
+        <div className={isSuccess ? "img-wrap-success" : "img-wrap-fail"}>
+          <img alt="sample" src={srcBg} />
+        </div>
+      )}
     </Card>
   );
 };
