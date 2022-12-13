@@ -23,7 +23,7 @@
     width: 115vw;
     z-index: 2;
     top: 0;
-    left: -30px;
+    left: -50px;
 }
 
 .flag-card-container .img-wrap-fail img {
@@ -35,7 +35,7 @@
     width: 100vw;
     z-index: 2;
     top: -50%;
-    left: -30px;
+    left: 0;
 }
 
 .flag-card-container .img-wrap-success img {
